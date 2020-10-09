@@ -1,0 +1,19 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "todolist to add and delete task",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "todo"
+  ],
+  "author": "divyansh",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.8"
+  }
+}

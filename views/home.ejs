@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+            <title>
+                <%= title %>
+            </title>
+            <link rel="stylesheet" href="./css/home.css"
+    </head>
+    <body>
+            <div style="background-color: lightgray;">
+                <h1>TODO App</h1>
+                <form action="/create-task" method="POST">
+                    <div>
+                        <label >DESCRIPTION</label>
+                        <input id="form-description" type="text" name="description" placeholder="What do you need to do?" required>
+                        <!-- <textarea id="form-description" name="description" placeholder="What do you need to do?"></textarea> -->
+                    </div>
+                    <div>
+                        <label>CATEGORY</label>
+                        <select name="category" id="category">
+                            <option value="personal">Personal</option>
+                            <option value="work">Work</option>
+                            <option value="school">School</option>
+                            <option value="cleaning">Cleaning</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <label for="duedate">DUE DATE</label>
+                        <input type="date" name="date" id="date-box">
+                        <br>
+                        <button type="submit">ADD TASK</button>
+                        <button type="button">DELETE TASKS</button>
+
+                    </div>
+                </form>
+                <div>
+                    <ul>
+                        <% for( i of todo_list) {%>
+                            <li>
+                                <div class="details">
+                                    <p><%= i.description %></p>
+                                    <p><%= i.category %></p>
+                                    <p><%= i.date %></p>
+                                </div>
+                            </li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+    </body>
+</html>
