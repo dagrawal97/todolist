@@ -28,21 +28,25 @@
                         <input type="date" name="date" id="date-box">
                         <br>
                         <button type="submit">ADD TASK</button>
-                        <button type="button">DELETE TASKS</button>
+                        <!-- <button type="submit" form="delete1">DELETE TASKS</button> -->
 
                     </div>
                 </form>
                 <div>
                     <ul>
-                        <% for( i of todo_list) {%>
+                        <form id="delete1" action="/delete-task" method="POST">
+                            <button type="submit" form="delete1">DELETE TASKS</button>
+                            <% for( i of todo_list) {%>
                             <li>
                                 <div class="details">
+                                    <input type="checkbox" name="<%= i._id %>" />
                                     <p><%= i.description %></p>
                                     <p><%= i.category %></p>
                                     <p><%= i.date %></p>
                                 </div>
                             </li>
                         <% } %>
+                        </form>
                     </ul>
                 </div>
             </div>

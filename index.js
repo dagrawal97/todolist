@@ -45,6 +45,27 @@ app.post('/create-task', function(req, res){
     });
 });
 
+app.post('/delete-task', function(req, res){
+
+    let id = req.body;
+    console.log(id);
+    let length = Object.keys(id).length;
+
+    for(let i = 0; i < length; i++){
+        let taskID = Object.keys(id)[i];
+        Todo.findByIdAndDelete(taskID, function(err){
+            if(err){
+                console.log(err);
+                return;
+            }
+
+            console.log('Sucessfully Deleted');
+        })
+    }
+
+    return res.redirect('back');
+});
+
 app.listen(port, function(err){
     if(err)
     {
