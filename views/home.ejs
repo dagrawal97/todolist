@@ -1,54 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-            <title>
-                <%= title %>
-            </title>
-            <link rel="stylesheet" href="./css/home.css"
-    </head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+        <link rel="stylesheet" href="./css/home.css">
+        <title>Todo App</title>
+    </head>    
+       
     <body>
-            <div style="background-color: lightgray;">
-                <h1>TODO App</h1>
-                <form action="/create-task" method="POST">
-                    <div>
-                        <label >DESCRIPTION</label>
-                        <input id="form-description" type="text" name="description" placeholder="What do you need to do?" required>
-                        <!-- <textarea id="form-description" name="description" placeholder="What do you need to do?"></textarea> -->
+        <div class="container">
+            <h1>TODO App</h1>
+            <form action="/create-task" method="POST">
+                
+                <div class="row">
+                    <div class="col-1-1">
+                        <label>DESCRIPTION</label>
+                        <input id="form-description" type="text" name="description" 
+                        placeholder="What do you need to do?" required>
                     </div>
-                    <div>
-                        <label>CATEGORY</label>
-                        <select name="category" id="category">
+                    
+                </div>
+                <!-- category -->
+                
+                <div class="row">
+                    <div class="col-1-2">
+                        <label for="Category">CATEGORY</label>
+                        <select name="category">
+                            <option selected>Choose a category</option>
                             <option value="personal">Personal</option>
                             <option value="work">Work</option>
                             <option value="school">School</option>
                             <option value="cleaning">Cleaning</option>
                             <option value="other">Other</option>
                         </select>
-                        <label for="duedate">DUE DATE</label>
-                        <input type="date" name="date" id="date-box">
-                        <br>
-                        <button type="submit">ADD TASK</button>
-                        <!-- <button type="submit" form="delete1">DELETE TASKS</button> -->
-
                     </div>
-                </form>
-                <div>
-                    <ul>
-                        <form id="delete1" action="/delete-task" method="POST">
-                            <button type="submit" form="delete1">DELETE TASKS</button>
-                            <% for( i of todo_list) {%>
-                            <li>
-                                <div class="details">
-                                    <input type="checkbox" name="<%= i._id %>" />
-                                    <p><%= i.description %></p>
-                                    <p><%= i.category %></p>
-                                    <p><%= i.date %></p>
-                                </div>
-                            </li>
-                        <% } %>
-                        </form>
-                    </ul>
+                    <div class="col-1-2">
+                        <label for="dueDate">DUE DATE</label>
+                        <input type="date" name="date">
+                    </div>    
+                </div> 
+                <div class="row">
+                    <button type="submit" class="col-1-2"><i class="fas fa-plus"></i>ADD TASK</button>
+                    <button type="submit"  form="delete1" class="col-1-2"><i class="fas fa-trash"></i>DELETE TASKS</button>
                 </div>
-            </div>
+                <!-- <button type="submit" form="delete1">DELETE TASKS</button> -->
+                    
+ 
+            </form>
+
+            <!-- display and delete task -->
+            <ul>
+                <form id="delete1" action="/delete-task" method="POST">
+                    <!-- <button type="submit" class="col-1-of-2"><i class="fas fa-trash"></i>DELETE TASKS</button> -->
+                    <% for( i of todo_list) {%>
+                    <li class="todo">
+                        <input type="checkbox" name="<%= i._id %>" />
+                        <span class="todo__description">
+                            <%= i.description %>
+                        </span>
+                        <span class="todo__category-<%= i.category %>">
+                            <%= i.category %>
+                        </span>
+                        <span class="todo__dueDate">
+                            <i class="far fa-calendar-alt"></i>
+                            <%= i.date %>
+                        </span>
+                    </li>
+                <% } %>
+                </form>
+            </ul>      
+        </div>
+        
     </body>
 </html>

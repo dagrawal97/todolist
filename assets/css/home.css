@@ -1,3 +1,137 @@
-body{
-    background-color: blue;
-}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html{
+    font-size: 50%;
+  }
+  
+  body {
+    margin: 20px;
+    background-color:rgba(228, 32, 32, 0.555);
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  input[type="text"] {
+    font-size: 2.0rem;
+    background:transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+  }
+
+  select{
+    width: 100%;
+    background:transparent;
+    border: none;
+    outline: none;
+  }
+  
+  label {
+    display: block;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+  
+  .container {
+    background-color: white;
+    width: 60%;
+    margin: 0 auto;
+    box-shadow: -1px -1px 6px 8px gray;
+  }
+  
+  .container h1 {
+    text-align: center;
+    
+  }
+  
+  .container .row {
+    border-top: 1px solid grey;
+     border-bottom: 1px solid grey;
+    display: flex;
+  }
+  .col-1-1 {
+    width: 100%;
+    padding: 2rem;
+  }
+  
+  .col-1-2 {
+    width: 50%;
+    padding: 2rem;
+  }
+  
+  button {
+    display: inline-block;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 18px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  button:nth-of-type(1){
+    background-color: black;
+  }
+  button:nth-of-type(2){
+    background-color: red;
+  }
+
+  li {
+    padding: 10px;
+    position: relative;
+    border-top: 1px solid gray;
+  }
+  .todo__description{
+    font-size: 2rem;
+    margin-left: 2rem;
+  }
+  [class^="todo__category"] {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: 0.6rem;
+    color: white;
+    position: absolute;
+    right: 2rem;
+    top: 2.15rem;
+    width: 90px;
+    text-align: center;
+  }
+  
+  .todo__dueDate {
+    display: block;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    font-size: 1.4rem;
+  }
+  
+  .todo__category-personal {
+    background-color: rgb(252, 191, 24);
+  }
+  
+  .todo__category-work {
+    background-color: hsla(328, 87%, 50%, 0.986);
+  }
+  
+  .todo__category-school {
+    background-color: rgb(37, 160, 33);
+  }
+  
+  .todo__category-cleaning {
+    background-color: rgb(36, 55, 226);
+  }
+  
+  
+  
+  
